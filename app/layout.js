@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -8,13 +8,13 @@ export const metadata = {
   description: "Share availability. Get booked. Done.",
 };
 
-const inter = Inter({ subsets: ["latin"] });
+const raleway = Raleway({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className}`}>
+        <body className={`${raleway.className}`}>
           {/* Header */}
           <Header />
 
