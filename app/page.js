@@ -45,7 +45,7 @@ export default function Home() {
       <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-24">
         <div className="lg:w-1/2">
           <h1 className="text-7xl font-extrabold gradient-title pb-6">
-            Simplify Your Scheduling
+            Scheduling, Simplified.
           </h1>
           <p className="text-xl text-gray-600 mb-10">
             Schedlit helps you schedule meetings efficiently. Set your
@@ -100,6 +100,41 @@ export default function Home() {
           What Our Users say
         </h2>
         <Testimonials />
+      </div>
+
+      <div className="mb-24">
+        <h2 className="text-3xl font-bold text-center mb-12 text-green-600">
+          How It Works
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {howItWorks.map((step, index) => {
+            return (
+              <div key={index} className="text-center">
+                <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-green-600 font-bold text-xl">
+                    {index + 1}
+                  </span>
+                </div>
+                <h3 className="font-semibold text-lg mb-2">{step.step}</h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="bg-green-600 text-white rounded-lg p-8 text-center">
+        <h2 className="text-3xl font-bold mb-4">
+          Ready to simplify your Scheduling?
+        </h2>
+        <p className="text-xl mb-6">
+          Sign up today and reclaim your time. It&apos;s free to get started.
+        </p>
+        <Link href="/dashboard">
+          <Button size="lg" variant="secondary" className="text-green-600">
+            Start For Free <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </Link>
       </div>
     </main>
   );
