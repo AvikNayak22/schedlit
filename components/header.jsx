@@ -14,7 +14,7 @@ const Header = () => {
           alt="logo"
           width={150}
           height={60}
-          className="h-16 w-auto"
+          className="h-14 w-auto"
         />
       </Link>
 

@@ -1,13 +1,6 @@
+import Testimonials from "@/components/testimonials";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Calendar, Clock, LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -78,22 +71,35 @@ export default function Home() {
       </div>
 
       <div className="mb-24">
-        <h2>Key Features</h2>
-        <div>
+        <h2 className="text-3xl font-bold text-center mb-12 text-green-600">
+          Key Features
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             return (
               <Card key={index}>
                 <CardHeader>
-                  <feature.icon classname="w-12 h-12 text-green-500 mb-4 mx-auto" />
-                  <CardTitle>{feature.title}</CardTitle>
+                  <feature.icon className="w-12 h-12 text-green-500 mb-4 mx-auto" />
+                  <CardTitle className="text-center text-green-600">
+                    {feature.title}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>{feature.description}</p>
+                  <p className="text-center text-gray-600">
+                    {feature.description}
+                  </p>
                 </CardContent>
               </Card>
             );
           })}
         </div>
+      </div>
+
+      <div className="mb-24">
+        <h2 className="text-3xl font-bold text-center mb-12 text-green-600">
+          What Our Users say
+        </h2>
+        <Testimonials />
       </div>
     </main>
   );
